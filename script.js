@@ -115,5 +115,5 @@ window.addEventListener("DOMContentLoaded", () => {
     clearCanvas(ctxt, c);
     writeText(ctxt, second, minute, hour);
     drawAll(ctxt, secondRadian, minuteRadian, hourRadian);
-  }, 1);
+  }, 1000);
 });
