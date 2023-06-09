@@ -57,13 +57,20 @@ const drawAll = (ctxt, secondRadian, minuteRadian, hourRadian) => {
 
 const writeText = (ctxt, second, minute, hour) => {
   ctxt.font = "20px serif";
-  ctxt.fillText(
-    `${hour < 10 ? `0${hour}` : hour} :  ${
-      minute < 10 ? `0${minute}` : minute
-    } : ${second < 10 ? `0${second}` : second} `,
-    155,
-    155
-  );
+  ctxt.fillStyle = "red";
+  ctxt.fillText(`${hour < 10 ? `0${hour}` : hour}`, 155, 155);
+
+  ctxt.fillStyle = "black";
+  ctxt.fillText(":", 180, 153);
+
+  ctxt.fillStyle = "blue";
+  ctxt.fillText(`${minute < 10 ? `0${minute}` : minute}`, 190, 155);
+
+  ctxt.fillStyle = "black";
+  ctxt.fillText(":", 215, 153);
+
+  ctxt.fillStyle = "orange";
+  ctxt.fillText(`${second < 10 ? `0${second}` : second}`, 225, 155);
 };
 
 window.addEventListener("DOMContentLoaded", () => {
@@ -80,8 +87,6 @@ window.addEventListener("DOMContentLoaded", () => {
   let secondRadian = secondDegree * (Math.PI / 180);
   let minuteRadian = minuteDegree * (Math.PI / 180);
   let hourRadian = hourDegree * (Math.PI / 180);
-
-  const fullCircleRadian = 11.21;
 
   drawAll(ctxt, secondRadian, minuteRadian, hourRadian);
 
