@@ -89,6 +89,7 @@ window.addEventListener("DOMContentLoaded", () => {
   let hourRadian = hourDegree * (Math.PI / 180);
 
   drawAll(ctxt, secondRadian, minuteRadian, hourRadian);
+  writeText(ctxt, second, minute, hour);
 
   setInterval(() => {
     second += 1;
